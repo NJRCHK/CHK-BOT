@@ -21,5 +21,13 @@ namespace WindowsFormsApp1TESTING
             System.Windows.Forms.Application.Exit();
 
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.KeyCode == Keys.K)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
+        }
     }
 }
