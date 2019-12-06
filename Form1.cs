@@ -9,26 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using System.Threading; 
-
+using System.Threading;
+using System.IO;
 
 namespace WindowsFormsApp1TESTING
 {
+    
     public partial class Form1 : Form
     {
-        [DllImport("user32.dll")]
+        private const string Runescape = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
+        private const string Calculator = "calc.exe";
+        private const string JagEx = "C:\\Users\\Nathaniel\\jagexcache\\jagexlauncher\\bin\\JagexLauncher.exe";
+
+            [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
         private void button2_Click_1(object sender, EventArgs e)
         {
             //To be changed
-            Process p = Process.Start("C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe");
-            Thread.Sleep(500);
-            p.WaitForInputIdle();
-            SetParent(p.MainWindowHandle, this.Handle);
+            //Process p = Process.Start("C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe");
+            //Thread.Sleep(500);
+            //p.WaitForInputIdle();
+            //SetParent(p.MainWindowHandle, this.Handle);
         }
         public Form1()
         {
             InitializeComponent();
+            var process = new Process
+            {
+                StartInfo = { FileName = JagEx, Arguments = "oldschool" }
+            };
+            process.Start();
+            Thread.Sleep(500);
+            SetParent(process.MainWindowHandle, this.Handle);
         }
         private void button1_Click(object sender, EventArgs e)
         {
