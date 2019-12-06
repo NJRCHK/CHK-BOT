@@ -17,7 +17,7 @@ namespace WindowsFormsApp1TESTING
     
     public partial class Form1 : Form
     {
-        private const string Runescape = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
+        private const string Runelite = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
         private const string Calculator = "calc.exe";
         private const string JagEx = "C:\\Users\\Nathaniel\\jagexcache\\jagexlauncher\\bin\\JagexLauncher.exe";
 
@@ -29,10 +29,10 @@ namespace WindowsFormsApp1TESTING
             InitializeComponent();
             var process = new Process
             {
-                StartInfo = { FileName = Calculator, Arguments = "oldschool" }
+                StartInfo = { FileName = Runelite}
             };
             process.Start();
-            Thread.Sleep(500);
+            Thread.Sleep(27000);
             SetParent(process.MainWindowHandle, this.Handle);
         }
         private void button1_Click(object sender, EventArgs e)
