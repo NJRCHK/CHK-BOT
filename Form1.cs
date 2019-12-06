@@ -21,7 +21,7 @@ namespace WindowsFormsApp1TESTING
         private const string Calculator = "calc.exe";
         private const string JagEx = "C:\\Users\\Nathaniel\\jagexcache\\jagexlauncher\\bin\\JagexLauncher.exe";
 
-            [DllImport("user32.dll")]
+        [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
         
         public Form1()
@@ -32,13 +32,11 @@ namespace WindowsFormsApp1TESTING
                 StartInfo = { FileName = JagEx, Arguments = "oldschool" }
             };
             process.Start();
-            Thread.Sleep(500);
             SetParent(process.MainWindowHandle, this.Handle);
         }
         private void button1_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
