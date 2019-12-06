@@ -29,9 +29,10 @@ namespace WindowsFormsApp1TESTING
             InitializeComponent();
             var process = new Process
             {
-                StartInfo = { FileName = JagEx, Arguments = "oldschool" }
+                StartInfo = { FileName = Calculator, Arguments = "oldschool" }
             };
             process.Start();
+            Thread.Sleep(500);
             SetParent(process.MainWindowHandle, this.Handle);
         }
         private void button1_Click(object sender, EventArgs e)
