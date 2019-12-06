@@ -23,14 +23,7 @@ namespace WindowsFormsApp1TESTING
 
             [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            //To be changed
-            //Process p = Process.Start("C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe");
-            //Thread.Sleep(500);
-            //p.WaitForInputIdle();
-            //SetParent(p.MainWindowHandle, this.Handle);
-        }
+        
         public Form1()
         {
             InitializeComponent();
