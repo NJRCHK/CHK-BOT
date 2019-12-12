@@ -8,6 +8,8 @@ namespace CHK
 {
     public partial class GameForm : Form
     {
+        private const int WindowDockingDelay = 27000;
+
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
         
@@ -19,7 +21,7 @@ namespace CHK
                 StartInfo = { FileName = runelightPath }
             };
             process.Start();
-            Thread.Sleep(27000);
+            Thread.Sleep(WindowDockingDelay);
             SetParent(process.MainWindowHandle, Handle);
         }
 
