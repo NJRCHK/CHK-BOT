@@ -15,21 +15,17 @@ using System.IO;
 namespace WindowsFormsApp1TESTING
 {
     
-    public partial class Form1 : Form
+    public partial class GameForm : Form
     {
-        private const string Runelite = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
-        private const string Calculator = "calc.exe";
-        private const string JagEx = "C:\\Users\\Nathaniel\\jagexcache\\jagexlauncher\\bin\\JagexLauncher.exe";
-
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
         
-        public Form1()
+        public GameForm(string runelightPath)
         {
             InitializeComponent();
             var process = new Process
             {
-                StartInfo = { FileName = Runelite}
+                StartInfo = { FileName = runelightPath }
             };
             process.Start();
             Thread.Sleep(27000);

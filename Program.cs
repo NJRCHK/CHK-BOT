@@ -8,6 +8,8 @@ namespace WindowsFormsApp1TESTING
 {
     static class Program
     {
+        private const string Runelite = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,7 @@ namespace WindowsFormsApp1TESTING
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new GameForm(Runelite));
         }
     }
 }

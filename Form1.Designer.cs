@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1TESTING
 {
-    partial class Form1
+    partial class GameForm
     {
         /// <summary>
         /// Required designer variable.
