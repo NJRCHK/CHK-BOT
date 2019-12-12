@@ -4,9 +4,8 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Threading;
 
-namespace WindowsFormsApp1TESTING
+namespace CHK
 {
-    
     public partial class GameForm : Form
     {
         [DllImport("user32.dll")]
@@ -21,8 +20,9 @@ namespace WindowsFormsApp1TESTING
             };
             process.Start();
             Thread.Sleep(27000);
-            SetParent(process.MainWindowHandle, this.Handle);
+            SetParent(process.MainWindowHandle, Handle);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1TESTING
+namespace CHK
 {
     static class Program
     {
-        private const string Runelite = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
+        private const string NateRunelightPath = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
         
         /// <summary>
         /// The main entry point for the application.
@@ -18,7 +15,23 @@ namespace WindowsFormsApp1TESTING
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameForm(Runelite));
+
+            string programPath = Microsoft.VisualBasic.Interaction.InputBox("Enter Runelight Path:", "CHK-BOT");
+            try
+            {
+                Application.Run(new GameForm(programPath));
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                try
+                {
+                    Application.Run(new GameForm(NateRunelightPath));
+                }
+                catch (System.ComponentModel.Win32Exception)
+                {
+                    Microsoft.VisualBasic.Interaction.MsgBox("Error: Runelight not found at: " + programPath);
+                }
+            }
         }
     }
 }

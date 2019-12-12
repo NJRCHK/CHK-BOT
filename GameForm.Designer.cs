@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1TESTING
+﻿namespace CHK
 {
     partial class GameForm
     {
