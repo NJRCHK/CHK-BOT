@@ -5,7 +5,7 @@ namespace CHK
 {
     static class Program
     {
-        private const string NateRunelightPath = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
+        private const string NateRuneLite = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
         
         /// <summary>
         /// The main entry point for the application.
@@ -23,14 +23,7 @@ namespace CHK
             }
             catch (System.ComponentModel.Win32Exception)
             {
-                try
-                {
-                    Application.Run(new GameForm(NateRunelightPath));
-                }
-                catch (System.ComponentModel.Win32Exception)
-                {
-                    Microsoft.VisualBasic.Interaction.MsgBox("Error: Runelight not found at: " + programPath);
-                }
+                Microsoft.VisualBasic.Interaction.MsgBox("Error: RuneLite not found at: " + programPath);
             }
         }
     }
