@@ -32,7 +32,7 @@
             // 
             // GameForm
             // 
-            this.ClientSize = new System.Drawing.Size(973, 646);
+            this.ClientSize = new System.Drawing.Size(437, 191);
             this.KeyPreview = true;
             this.Name = "GameForm";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

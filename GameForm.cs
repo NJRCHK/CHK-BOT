@@ -8,7 +8,7 @@ namespace CHK
 {
     public partial class GameForm : Form
     {
-        private const int WindowDockingDelay = 0;
+        private const int WindowDockingDelay = 27000;
 
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
@@ -24,8 +24,6 @@ namespace CHK
             process.Start();
             Thread.Sleep(WindowDockingDelay);
             SetParent(process.MainWindowHandle, Handle);
-
-
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
