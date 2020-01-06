@@ -31,10 +31,6 @@ namespace CHK
             SetParent(process.MainWindowHandle, Handle);
         }
         
-        public GameForm()
-        {
-            
-        }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control == true)
