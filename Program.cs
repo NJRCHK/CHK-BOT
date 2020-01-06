@@ -5,7 +5,7 @@ namespace CHK
 {
     static class Program
     {
-        private const string NateRuneLite = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
+        private const string NateRunelightPath = "C:\\Users\\Nathaniel\\AppData\\Local\\RuneLite\\RuneLite.exe";
         
         /// <summary>
         /// The main entry point for the application.

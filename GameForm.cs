@@ -8,11 +8,12 @@ namespace CHK
 {
     public partial class GameForm : Form
     {
-        private const int WindowDockingDelay = 27000;
+        private const int WindowDockingDelay = 0;
 
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
-        
+
+
         public GameForm(string runelightPath)
         {
             InitializeComponent();
@@ -23,19 +24,14 @@ namespace CHK
             process.Start();
             Thread.Sleep(WindowDockingDelay);
             SetParent(process.MainWindowHandle, Handle);
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Control == true && e.KeyCode == Keys.K)
-            {
+            if (e.Control == true)
                 Application.Exit();
-            }
         }
     }
 }
