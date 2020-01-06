@@ -17,6 +17,11 @@ namespace CHK
         public GameForm(string runelightPath)
         {
             InitializeComponent();
+            //Set window to fullscreen
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
+            //Open RuneLite inside of form
             var process = new Process
             {
                 StartInfo = { FileName = runelightPath }
@@ -25,7 +30,11 @@ namespace CHK
             Thread.Sleep(WindowDockingDelay);
             SetParent(process.MainWindowHandle, Handle);
         }
-
+        
+        public GameForm()
+        {
+            
+        }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control == true)
