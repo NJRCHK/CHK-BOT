@@ -8,11 +8,10 @@ namespace CHK
 {
     public partial class GameForm : Form
     {
-        private const int WindowDockingDelay = 27000;
+        private const int WindowDockingDelay = 15000;
 
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
-
 
         public GameForm(string runelightPath)
         {
