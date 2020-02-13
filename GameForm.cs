@@ -54,9 +54,12 @@ namespace CHK
             }
             if (Keys.H == e.KeyCode)
             {
-                Thread t = new Thread(StartBot);
-                t.IsBackground = true;
-                t.Start();
+                whlie(true)
+                {
+                    Thread t = new Thread(StartBot);
+                    t.IsBackground = true;
+                    t.Start();
+                }
             }
 
         }
@@ -110,8 +113,7 @@ namespace CHK
             DoMouseClick(1000,2000);
 
             
-            //Restart Bot
-            StartBot();
+  
             }  
         
 
